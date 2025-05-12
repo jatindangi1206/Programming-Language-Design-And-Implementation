@@ -1,0 +1,18 @@
+PROGRAM test3
+INTEGER large_num
+INTEGER i
+INTEGER j
+large_num = 2147483647  ! Maximum 32-bit integer
+DO i = 1, 5
+    DO j = 1, 5
+        IF (i .EQ. j) THEN
+            IF (i .LT. 3) THEN
+                PRINT *, "i equals j and is less than 3"
+            ELSE
+                PRINT *, "i equals j and is 3 or more"
+            END IF
+        END IF
+    END DO
+END DO
+PRINT *, "Large number is", large_num
+END PROGRAM test3

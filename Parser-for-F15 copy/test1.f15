@@ -1,0 +1,28 @@
+! Program: Check if n lies within range m-p to m+p
+PROGRAM range_check
+INTEGER m
+INTEGER n 
+INTEGER p
+INTEGER lower
+INTEGER upper
+
+READ *, m
+READ *, n
+READ *, p
+
+! Calculate bounds
+lower = m - p
+upper = m + p
+
+! Check if n is within bounds
+IF (n .GE. lower) THEN
+    IF (n .LE. upper) THEN
+        PRINT *, n, "is within range"
+    ELSE
+        PRINT *, n, "is above range"
+    END IF
+ELSE
+    PRINT *, n, "is below range"
+END IF
+
+END PROGRAM range_check

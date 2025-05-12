@@ -1,0 +1,6 @@
+PROGRAM test4
+INTEGER 123invalid  ! Error: invalid identifier
+INTEGER valid
+READ *, valid
+PRINT *, valid * 2  ! Error: multiplication not supported in F-15
+END PROGRAM test4

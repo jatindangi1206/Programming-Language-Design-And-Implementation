@@ -1,0 +1,15 @@
+PROGRAM test5
+INTEGER x
+INTEGER y
+READ *, x, y
+IF (x .GT. y) THEN
+    PRINT *, "x is greater than y"
+ELSE IF (x .LT. y) THEN  ! Error: ELSE IF not supported in F-15
+    PRINT *, "y is greater than x"
+ELSE
+    PRINT *, "x equals y"
+END IF
+DO x = 1, 10, 2  ! Error: step size not supported in F-15
+    PRINT *, x
+END DO
+END PROGRAM test5

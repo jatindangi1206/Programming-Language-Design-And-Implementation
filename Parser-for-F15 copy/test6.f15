@@ -1,0 +1,45 @@
+! Program: Find Pythagorean triples up to n
+! Using formulas: a = m^2 - n^2, b = 2mn, c = m^2 + n^2
+PROGRAM pythagorean
+INTEGER n
+INTEGER m
+INTEGER k
+INTEGER a
+INTEGER b
+INTEGER c
+INTEGER msq
+INTEGER nsq
+INTEGER temp
+
+! Read upper bound
+READ *, n
+
+! Outer loop for m
+DO m = 2, n
+    msq = m * m
+    
+    ! Inner loop for k (represents n in formula)
+    DO k = 1, m
+        ! Calculate n^2
+        nsq = k * k
+        
+        ! Calculate the triple
+        a = msq - nsq   ! m^2 - n^2
+        b = 2 * m * k   ! 2mn
+        c = msq + nsq   ! m^2 + n^2
+        
+        ! Check if all numbers are within bound
+        IF (c .LE. n) THEN
+            ! Check if a <= b
+            IF (a .LE. b) THEN
+                ! Ensure positive values
+                IF (a .GT. 0) THEN
+                    ! Print the triple
+                    PRINT *, a, b, c
+                END IF
+            END IF
+        END IF
+    END DO
+END DO
+
+END PROGRAM pythagorean

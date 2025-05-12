@@ -1,0 +1,29 @@
+! Program: Find digital square root s of n where s = floor(sqrt(n))
+PROGRAM digital_sqrt
+INTEGER n
+INTEGER s
+INTEGER temp
+INTEGER prev
+
+! Read the number
+READ *, n
+
+! Start with s = 1
+s = 1
+prev = 0
+
+! Keep incrementing s until s*s > n
+DO s = s, n
+    temp = s * s
+    IF (temp .GT. n) THEN
+        ! We went too far, use previous value
+        s = s - 1
+        PRINT *, "Digital square root is", s
+        END DO
+    END IF
+    
+    ! Remember current value
+    prev = s
+END DO
+
+END PROGRAM digital_sqrt

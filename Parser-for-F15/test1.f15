@@ -1,0 +1,16 @@
+PROGRAM sum
+
+INTEGER n
+INTEGER i
+INTEGER s
+
+READ *, n
+
+s=0
+DO i = 1, n
+    s=s+i
+END DO
+
+PRINT *, "Sum of first n natural numbers is", s
+
+END PROGRAM sum

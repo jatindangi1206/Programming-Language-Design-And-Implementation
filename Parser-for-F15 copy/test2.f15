@@ -1,0 +1,27 @@
+! Program: Find sum of odd numbers up to n
+PROGRAM odd_sum
+INTEGER n
+INTEGER i
+INTEGER sum
+INTEGER temp
+
+! Read the upper bound
+READ *, n
+
+! Initialize sum
+sum = 0
+
+! Sum odd numbers from 1 to n
+DO i = 1, n
+    ! Check if i is odd
+    temp = i / 2
+    temp = temp * 2
+    IF (temp .NE. i) THEN
+        sum = sum + i
+    END IF
+END DO
+
+! Print result
+PRINT *, "Sum of odd numbers up to", n, "is", sum
+
+END PROGRAM odd_sum

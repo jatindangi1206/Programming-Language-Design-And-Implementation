@@ -1,0 +1,38 @@
+! Program: Generate series where
+! s0 = 1
+! si-si-1 = si-1 + 1, i ≥1, i is odd
+! si-si-1 = si-1 - 1, i ≥2, i is even
+PROGRAM complex_series
+INTEGER n
+INTEGER i
+INTEGER current
+INTEGER diff
+INTEGER temp
+INTEGER isOdd
+
+! Read how many numbers to generate
+READ *, n
+
+! Initialize first number
+current = 1
+PRINT *, current
+
+! Generate remaining numbers
+DO i = 2, n
+    ! Check if i is odd
+    temp = i / 2
+    temp = temp * 2
+    IF (temp .EQ. i) THEN
+        ! i is even
+        diff = current - 1
+    ELSE
+        ! i is odd
+        diff = current + 1
+    END IF
+    
+    ! Calculate and print next number
+    current = current + diff
+    PRINT *, current
+END DO
+
+END PROGRAM complex_series

@@ -1,0 +1,31 @@
+! Program: Print first n numbers of Fibonacci series
+PROGRAM fibonacci
+INTEGER n
+INTEGER i
+INTEGER a
+INTEGER b
+INTEGER temp
+
+! Read how many numbers to generate
+READ *, n
+
+! Initialize first two numbers
+a = 0
+b = 1
+
+! Print first two numbers
+PRINT *, a
+PRINT *, b
+
+! Generate remaining numbers
+DO i = 3, n
+    ! Calculate next number
+    temp = a + b
+    ! Print current number
+    PRINT *, temp
+    ! Update for next iteration
+    a = b
+    b = temp
+END DO
+
+END PROGRAM fibonacci
